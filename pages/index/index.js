@@ -106,6 +106,25 @@ Page({
         duration: 2000
       })
     },3000)
+  },
+
+//调用天气接口
+  wx_weather: function () {
+    request({
+  url : 'https: //free-api.heweather.net/s6/weather/now?',
+    data: {
+      location : beijing ,
+      key:d35a36f260914f548ee6d88c88200d4b
+      
+    },
+    header: {
+      'content-type': 'application/json' // 默认值
+    },
+    success(res) {
+      console.log(res.data)
+    }
+  
+  })
   }
 
 
