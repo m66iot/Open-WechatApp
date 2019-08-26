@@ -1,5 +1,22 @@
 /**index.wxss**/
 
+.weather{
+  display: flex;
+} 
+.wendu{
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+
+.answer-txt{
+  width: 4000rpx;
+  height: 4000rpx;
+  font-weight:bold
+  
+}
+
 .container{
   height: 1500rpx;
 }

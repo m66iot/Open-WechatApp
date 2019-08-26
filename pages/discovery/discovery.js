@@ -2,12 +2,12 @@
 var util = require('../../utils/util.js')
 Page({
   data: {
-    navTab: ["推荐", "圆桌", "热门", "收藏"],
+    navTab: ["场景", "设备"],
     currentNavtab: "0",
     imgUrls: [
-      '../../images/24213.jpg',
-      '../../images/24280.jpg',
-      '../../images/1444983318907-_DSC1826.jpg'
+      '../../images/img_home_banner.png',
+      '../../images/img_jiankong.png'
+      
     ],
     indicatorDots: false,
     autoplay: true,

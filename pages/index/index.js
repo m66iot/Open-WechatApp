@@ -109,23 +109,44 @@ Page({
   },
 
 //调用天气接口
-  wx_weather: function () {
-    request({
-  url : 'https: //free-api.heweather.net/s6/weather/now?',
-    data: {
-      location : beijing ,
-      key:d35a36f260914f548ee6d88c88200d4b
-      
-    },
-    header: {
-      'content-type': 'application/json' // 默认值
-    },
-    success(res) {
-      console.log(res.data)
-    }
   
-  })
-  }
+  onShow: function () {
+    var that = this;
+    wx.request({
+      url: "https://free-api.heweather.net/s6/weather/{weathertype}?{parameters}",
+      method: 'GET',
+      data: {
+        weathertype : 'now',
+        parameters : {
+        location : 'beijing',
+        key: 'd35a36f260914f548ee6d88c88200d4b'
+        }
+        
+      },
+      
+      success: function (res) {
+        var list = res.data.HeWeather6[0].now;
+        if (list == null) {
+          var toastText = '获取信息失败' + res.data.errMsg;
+          
+        } else {
+          console.log(list);
+          that.setData({
+            list: list
+          });
+        }
+      },
+
+      fail : function(){
+        console.log(data);
+      }
 
 
+    })
+  },
+
+
+
+
+  
 })
